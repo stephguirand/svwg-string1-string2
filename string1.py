@@ -4,7 +4,13 @@ Kenzie assignment: String1
 """
 # Your name, plus anyone who helped you with this assignment.
 # Give credit where credit is due.
-__author__ = "???"
+__author__ = "stephguirand"
+"""
+Help from demo, lessons and activities, youtube videos in canvas and
+own search on youtube,
+stack overflow, Tutors, Facilitators and talking
+about assignment in study group.
+"""
 
 # Copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
@@ -28,8 +34,12 @@ __author__ = "???"
 
 
 def donuts(count):
-    # your code here
-    return
+    if count < 10:
+        return f'Number of donuts: {count}'
+    else:
+        return "Number of donuts: many"
+
+    # # your code here
 
 
 # B. both_ends
@@ -42,43 +52,49 @@ def donuts(count):
 
 
 def both_ends(s):
+    if len(s) < 2:
+        return ''
+    else:
+        return s[0:2] + s[-2:]
+
     # your code here
-    return
 
-
-# C. fix_start
-# Given a string s, return a string where all occurrences
-# of its first character have been changed to '*', except
-# do not change the first character itself.
-# Example:
-#   'babble' -> 'ba**le'
-# Assume that the string is length 1 or more.
-# Hint: s.replace(stra, strb) returns a version of string s
-# where all instances of stra have been replaced by strb.
+    # C. fix_start
+    # Given a string s, return a string where all occurrences
+    # of its first character have been changed to '*', except
+    # do not change the first character itself.
+    # Example:
+    #   'babble' -> 'ba**le'
+    # Assume that the string is length 1 or more.
+    # Hint: s.replace(stra, strb) returns a version of string s
+    # where all instances of stra have been replaced by strb.
 
 
 def fix_start(s):
+    if len(s) >= 1:
+        return s[0] + s[1:].replace(s[0], "*")
     # your code here
-    return
 
-
-# D. mix_up
-# Given strings a and b, return a single string with a and
-# b separated by a space '<a> <b>', except swap the first
-# 2 characters of each string.
-# Example:
-#   'mix', 'pod' -> 'pox mid'
-#   'dog', 'dinner' -> 'dig donner'
-# Assume a and b are length 2 or more.
+    # D. mix_up
+    # Given strings a and b, return a single string with a and
+    # b separated by a space '<a> <b>', except swap the first
+    # 2 characters of each string.
+    # Example:
+    #   'mix', 'pod' -> 'pox mid'
+    #   'dog', 'dinner' -> 'dig donner'
+    # Assume a and b are length 2 or more.
 
 
 def mix_up(a, b):
-    # your code here
-    return
+    if len(a) or len(b) > 2:
+        return b[0:2] + a[2:] + ' ' + a[0:2] + b[2:]
 
+    # your code here
 
 # Provided simple test() function used in main() to print
 # what each function returns vs. what it's supposed to return.
+
+
 def test(got, expected):
     if got == expected:
         prefix = ' OK '

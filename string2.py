@@ -4,7 +4,10 @@ Kenzie assignment: String2
 """
 # Your name, plus anyone who helped you with this assignment.
 # Give credit where credit is due.
-__author__ = "???"
+__author__ = "stephguirand"
+"""Help from demo, lessons and activities, youtube videos in canvas and own
+search on youtube,stack overflow, Tutors,
+Facilitators and talking about assignment in study group."""
 
 # Copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
@@ -23,9 +26,14 @@ __author__ = "???"
 
 
 def verbing(s):
-    # your code here
-    return
+    if len(s) < 3:
+        return s
+    elif (s[-3:] == 'ing'):
+        return s + 'ly'
+    else:
+        return s + 'ing'
 
+    # your code here
 
 # E. not_bad
 # Given a string, find the first occurrence of the substrings
@@ -37,9 +45,13 @@ def verbing(s):
 
 
 def not_bad(s):
-    # your code here
-    return
+    not_bad = s.find('not')
+    bad_bad = s.find('bad')
+    if (bad_bad > not_bad):
+        return s[:not_bad] + 'good' + s[(bad_bad + 3):]
+    return s
 
+    # your code here
 
 # F. front_back
 # Consider dividing a string into two halves.
@@ -52,12 +64,15 @@ def not_bad(s):
 
 
 def front_back(a, b):
-    # your code here
-    return
-
+    # +++your code here+++
+    a_fb = int(len(a)/2+(len(a) % 2))
+    b_fb = int(len(b)/2+(len(b) % 2))
+    return a[:a_fb]+b[:b_fb]+a[a_fb:]+b[b_fb:]
 
 # Provided simple test() function used in main() to print
 # what each function returns vs. what it's supposed to return.
+
+
 def test(got, expected):
     if got == expected:
         prefix = ' OK '
